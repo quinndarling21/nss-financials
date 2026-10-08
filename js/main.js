@@ -6,6 +6,7 @@ import { MainMenu } from './screens/menu.js';
 import { VendorInquiry } from './screens/vendor-inquiry.js';
 import { POInquiry } from './screens/po-inquiry.js';
 import { ReceivingInquiry } from './screens/receiving.js';
+import { VoucherEntry } from './screens/voucher-entry.js';
 import { BankReview } from './screens/bank-review.js';
 
 const SCREENS = {
@@ -14,6 +15,7 @@ const SCREENS = {
   APV010: VendorInquiry,
   APP020: POInquiry,
   APR030: ReceivingInquiry,
+  APV040: VoucherEntry,
   APV070: BankReview,
 };
 
