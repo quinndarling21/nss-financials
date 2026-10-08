@@ -1,0 +1,174 @@
+:root {
+  --green: #33ff66;
+  --white: #f4f4f0;
+  --cyan: #4fe3e8;
+  --yellow: #f2e35c;
+  --red: #ff5f5f;
+  --blue: #6f9cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#screen {
+  --lh: 1.15em;
+  position: relative;
+  width: 80ch;
+  height: calc(24 * var(--lh));
+  font-family: "IBM Plex Mono", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace;
+  font-size: min(calc(100vw / 51), calc(100vh / 28.5));
+  line-height: var(--lh);
+  font-variant-ligatures: none;
+  color: var(--green);
+  background: #000;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.layer > * {
+  pointer-events: auto;
+}
+
+.layer > .layer {
+  pointer-events: none;
+}
+
+.t,
+.f,
+.hs,
+.blk,
+.winbg {
+  position: absolute;
+  left: calc(var(--c) * 1ch);
+  top: calc(var(--r) * var(--lh));
+  height: var(--lh);
+  white-space: pre;
+}
+
+.w { color: var(--white); }
+.c { color: var(--cyan); }
+.y { color: var(--yellow); }
+.r { color: var(--red); }
+.b { color: var(--blue); }
+
+.rv {
+  background: var(--green);
+  color: #000;
+}
+
+.f {
+  width: calc(var(--w) * 1ch);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  font: inherit;
+  line-height: var(--lh);
+  letter-spacing: 0;
+  color: var(--green);
+  caret-color: transparent;
+  background-color: transparent;
+  background-image: linear-gradient(var(--green), var(--green));
+  background-repeat: no-repeat;
+  background-size: 100% max(1px, 0.07em);
+  background-position: 0 calc(100% - 0.06em);
+  box-shadow: none;
+}
+
+.f[type="password"] {
+  color: transparent;
+}
+
+.f::selection {
+  background: var(--green);
+  color: #000;
+}
+
+.f[type="password"]::selection {
+  color: transparent;
+}
+
+.f:-webkit-autofill,
+.f:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--green);
+  -webkit-box-shadow: 0 0 0 100em #000 inset;
+  transition: background-color 600000s;
+}
+
+.hs {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  line-height: var(--lh);
+  text-align: left;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hs:hover,
+.hs:focus-visible {
+  outline: none;
+  text-decoration: underline;
+}
+
+.msg {
+  width: 80ch;
+}
+
+.blk {
+  width: 1ch;
+  background: var(--green);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.blk.on {
+  animation: blink 1.06s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(22 * var(--lh));
+}
+
+.winbg {
+  width: calc(var(--w) * 1ch);
+  height: calc(var(--h) * var(--lh));
+  background: #000;
+}
