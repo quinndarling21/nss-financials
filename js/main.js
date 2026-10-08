@@ -3,10 +3,18 @@ import { db, save, ensureBusinessDate, checkEpoch } from './state.js';
 import { fmtDate, nowTime, todayISO } from './dates.js';
 import { SignOn } from './screens/signon.js';
 import { MainMenu } from './screens/menu.js';
+import { VendorInquiry } from './screens/vendor-inquiry.js';
+import { POInquiry } from './screens/po-inquiry.js';
+import { ReceivingInquiry } from './screens/receiving.js';
+import { BankReview } from './screens/bank-review.js';
 
 const SCREENS = {
   SIGNON: SignOn,
   APMENU: MainMenu,
+  APV010: VendorInquiry,
+  APP020: POInquiry,
+  APR030: ReceivingInquiry,
+  APV070: BankReview,
 };
 
 const FKEY = /^F([1-9]|1[0-2])$/;
