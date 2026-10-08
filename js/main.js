@@ -7,6 +7,8 @@ import { VendorInquiry } from './screens/vendor-inquiry.js';
 import { POInquiry } from './screens/po-inquiry.js';
 import { ReceivingInquiry } from './screens/receiving.js';
 import { VoucherEntry } from './screens/voucher-entry.js';
+import { OpenVouchers } from './screens/open-vouchers.js';
+import { PaymentProposal } from './screens/payment-proposal.js';
 import { BankReview } from './screens/bank-review.js';
 
 const SCREENS = {
@@ -16,6 +18,8 @@ const SCREENS = {
   APP020: POInquiry,
   APR030: ReceivingInquiry,
   APV040: VoucherEntry,
+  APV050: OpenVouchers,
+  APP060: PaymentProposal,
   APV070: BankReview,
 };
 
